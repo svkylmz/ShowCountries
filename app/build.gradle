@@ -87,4 +87,6 @@ dependencies {
 
     // a library used to remember users' preferences
     implementation "androidx.preference:preference-ktx:$preferencesVersion"
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
