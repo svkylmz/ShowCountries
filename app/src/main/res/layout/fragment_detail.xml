@@ -2,10 +2,68 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.DetailFragment">
 
-    </FrameLayout>
+        <ImageView
+            android:id="@+id/countryFlag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:minHeight="220dp"
+            android:scaleType="fitCenter"></ImageView>
+        <TextView
+            android:id="@+id/countryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/countryFlag"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:text="Turkey"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp">
+        </TextView>
+       <TextView
+           android:id="@+id/countryCapital"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/countryName"
+           android:textSize="30sp"
+           android:layout_centerHorizontal="true"
+           android:layout_marginTop="5dp"
+           android:text="Ankara">
+       </TextView>
+        <TextView
+            android:id="@+id/countryRegion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/countryCapital"
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="Asia">
+        </TextView>
+        <TextView
+            android:id="@+id/countryCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/countryRegion"
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="TRY">
+        </TextView>
+        <TextView
+            android:id="@+id/countryLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/countryCurrency"
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="Turkish">
+        </TextView>
+    </RelativeLayout>
 </layout>
