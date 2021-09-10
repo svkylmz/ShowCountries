@@ -23,7 +23,7 @@ class CountryAdapter(val countryList: ArrayList<Country>): RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
-        holder.view.countryNameText.text = countryList[position].countryName
+        holder.view.countryNameText.text = countryList[position].countryName?.uppercase()
         holder.view.capitalNameText.text = countryList[position].countryCapital
 
         holder.view.setOnClickListener {
