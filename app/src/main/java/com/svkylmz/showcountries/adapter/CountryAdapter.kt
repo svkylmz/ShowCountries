@@ -3,9 +3,11 @@ package com.svkylmz.showcountries.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.svkylmz.showcountries.R
 import com.svkylmz.showcountries.model.Country
+import com.svkylmz.showcountries.view.FeedFragmentDirections
 import kotlinx.android.synthetic.main.country_list_item.view.*
 
 class CountryAdapter(val countryList: ArrayList<Country>): RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
@@ -23,6 +25,11 @@ class CountryAdapter(val countryList: ArrayList<Country>): RecyclerView.Adapter<
     override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
         holder.view.countryNameText.text = countryList[position].countryName
         holder.view.capitalNameText.text = countryList[position].countryCapital
+
+        holder.view.setOnClickListener {
+            val action = FeedFragmentDirections.actionFeedFragmentToDetailFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
     override fun getItemCount(): Int {
