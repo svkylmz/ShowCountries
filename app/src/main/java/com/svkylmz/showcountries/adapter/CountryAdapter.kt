@@ -7,6 +7,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.svkylmz.showcountries.R
 import com.svkylmz.showcountries.model.Country
+import com.svkylmz.showcountries.util.downloadImageFromUrl
 import com.svkylmz.showcountries.view.FeedFragmentDirections
 import kotlinx.android.synthetic.main.country_list_item.view.*
 
@@ -25,6 +26,7 @@ class CountryAdapter(val countryList: ArrayList<Country>): RecyclerView.Adapter<
     override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
         holder.view.countryNameText.text = countryList[position].countryName?.uppercase()
         holder.view.capitalNameText.text = countryList[position].countryCapital
+        holder.view.imageView.downloadImageFromUrl(countryList[position].countryFlagImageUrl)
 
         holder.view.setOnClickListener {
             val action = FeedFragmentDirections.actionFeedFragmentToDetailFragment()
