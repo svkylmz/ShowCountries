@@ -32,5 +32,5 @@ data class Country (
     val countryFlagImageUrl: String?
     ) {
     @PrimaryKey(autoGenerate = true)
-    val uuid: Int = 0
+    var uuid: Int = 0
 }
