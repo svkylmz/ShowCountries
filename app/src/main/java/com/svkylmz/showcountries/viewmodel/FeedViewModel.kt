@@ -32,7 +32,12 @@ class FeedViewModel(application: Application): BaseViewModel(application) {
         }
     }
 
+    fun refreshFromAPI() {
+        getDataFromAPI()
+    }
+
     private fun getDataFromSqlite() {
+        countryLoading.value = true
         launch {
             val countries = CountryDatabase(getApplication()).countryDao().getAllCountries()
             showCountries(countries)
@@ -42,7 +47,6 @@ class FeedViewModel(application: Application): BaseViewModel(application) {
 
     private fun getDataFromAPI() {
         countryLoading.value = true
-
         disposable.add(
             countryApiService.getData()
                 .subscribeOn(Schedulers.newThread())
