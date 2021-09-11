@@ -29,7 +29,7 @@ class CountryAdapter(val countryList: ArrayList<Country>): RecyclerView.Adapter<
         holder.view.imageView.downloadImageFromUrl(countryList[position].countryFlagImageUrl)
 
         holder.view.setOnClickListener {
-            val action = FeedFragmentDirections.actionFeedFragmentToDetailFragment()
+            val action = FeedFragmentDirections.actionFeedFragmentToDetailFragment(countryList[position].uuid)
             Navigation.findNavController(it).navigate(action)
         }
     }

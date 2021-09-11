@@ -8,17 +8,16 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.svkylmz.showcountries.R
+import com.svkylmz.showcountries.util.downloadImageFromUrl
 import com.svkylmz.showcountries.viewmodel.DetailViewModel
-import com.svkylmz.showcountries.viewmodel.FeedViewModel
 import kotlinx.android.synthetic.main.fragment_detail.*
 
 class DetailFragment : Fragment() {
     private lateinit var viewModel: DetailViewModel
-
+    private var countryUuid = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -32,8 +31,12 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        arguments?.let {
+            countryUuid = DetailFragmentArgs.fromBundle(it).countryUuid
+        }
+
         viewModel = ViewModelProviders.of(this).get(DetailViewModel::class.java)
-        viewModel.getDataFromRoomDatabase()
+        viewModel.getDataFromRoomDatabase(countryUuid)
 
         observeLiveData()
     }
@@ -46,7 +49,7 @@ class DetailFragment : Fragment() {
                 countryCapital.text = it.countryCapital
                 countryCurrency.text = it.countryCurrency
                 countryLanguage.text = it.countryLanguage
-                //image operations will be here later with glide library
+                countryFlag.downloadImageFromUrl(it.countryFlagImageUrl)
             }
         })
     }

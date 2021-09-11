@@ -13,7 +13,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:minHeight="220dp"
-            android:scaleType="fitCenter"></ImageView>
+            android:scaleType="fitCenter">
+        </ImageView>
         <TextView
             android:id="@+id/countryName"
             android:layout_width="wrap_content"
@@ -21,7 +22,6 @@
             android:layout_below="@id/countryFlag"
             android:textSize="40sp"
             android:textStyle="bold"
-            android:text="Turkey"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp">
         </TextView>
@@ -32,8 +32,7 @@
            android:layout_below="@id/countryName"
            android:textSize="30sp"
            android:layout_centerHorizontal="true"
-           android:layout_marginTop="5dp"
-           android:text="Ankara">
+           android:layout_marginTop="5dp">
        </TextView>
         <TextView
             android:id="@+id/countryRegion"
@@ -42,8 +41,7 @@
             android:layout_below="@id/countryCapital"
             android:textSize="30sp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:text="Asia">
+            android:layout_marginTop="5dp">
         </TextView>
         <TextView
             android:id="@+id/countryCurrency"
@@ -52,8 +50,7 @@
             android:layout_below="@id/countryRegion"
             android:textSize="30sp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:text="TRY">
+            android:layout_marginTop="5dp">
         </TextView>
         <TextView
             android:id="@+id/countryLanguage"
@@ -62,8 +59,7 @@
             android:layout_below="@id/countryCurrency"
             android:textSize="30sp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:text="Turkish">
+            android:layout_marginTop="5dp">
         </TextView>
     </RelativeLayout>
 </layout>
