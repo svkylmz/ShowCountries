@@ -1,7 +1,6 @@
 package com.svkylmz.showcountries.viewmodel
 
 import android.app.Application
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.svkylmz.showcountries.model.Country
 import com.svkylmz.showcountries.service.CountryAPIService
@@ -41,7 +40,6 @@ class FeedViewModel(application: Application): BaseViewModel(application) {
         launch {
             val countries = CountryDatabase(getApplication()).countryDao().getAllCountries()
             showCountries(countries)
-            Toast.makeText(getApplication(), "Countries from SQLite", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -54,7 +52,6 @@ class FeedViewModel(application: Application): BaseViewModel(application) {
                 .subscribeWith(object : DisposableSingleObserver<List<Country>>() {
                     override fun onSuccess(t: List<Country>) {
                         storeInSqlite(t)
-                        Toast.makeText(getApplication(), "Countries from API", Toast.LENGTH_LONG).show()
                     }
 
                     override fun onError(e: Throwable) {
