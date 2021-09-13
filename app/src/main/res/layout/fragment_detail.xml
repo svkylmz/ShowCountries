@@ -2,6 +2,13 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="selectedCountry"
+            type="com.svkylmz.showcountries.model.Country" />
+    </data>
+    
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -9,6 +16,7 @@
 
         <ImageView
             android:id="@+id/countryFlag"
+            android:downloadUrl="@{selectedCountry.countryFlagImageUrl}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -20,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/countryFlag"
+            android:text="@{selectedCountry.countryName}"
             android:textSize="40sp"
             android:textStyle="bold"
             android:layout_centerHorizontal="true"
@@ -30,6 +39,7 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_below="@id/countryName"
+           android:text="@{selectedCountry.countryCapital}"
            android:textSize="30sp"
            android:layout_centerHorizontal="true"
            android:layout_marginTop="5dp">
@@ -39,6 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/countryCapital"
+            android:text="@{selectedCountry.countryRegion}"
             android:textSize="30sp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp">
@@ -48,6 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/countryRegion"
+            android:text="@{selectedCountry.countryCurrency}"
             android:textSize="30sp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp">
@@ -57,6 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/countryCurrency"
+            android:text="@{selectedCountry.countryLanguage}"
             android:textSize="30sp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp">
